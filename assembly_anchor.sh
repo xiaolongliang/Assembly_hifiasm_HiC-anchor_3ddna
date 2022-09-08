@@ -2,35 +2,33 @@
 ## assembly software: hifiasm
 ## Hic-anchor software: juicer, 3DDNA
 
+################################
 #- workdir
 #	- Hifi_input/
 #	- HiC_input/	
 #	- Hifi_output/ 新建
 #	- juicer_output/ 新建 
+################################
 
 ##有参shell
-#while getopts ':hifi:hic:cpu:' opt
-#do
-#	case $opt in
-#		hifi)
-#			Hifi_input=$OPTARG
-#			;;
-#		hic)
-#			HiC_input=$OPTARG
-#			;;
-#		cpu)
-#			CPU=$OPTARG
-#			;;
-#		?)
-#			echo "Usage: assembly_anchor.sh -hifi hifi_dir -hic hic_dir -cpu cpu"
-#			exit 1
-#			;;
-#	esac
-#done
+while getopts ":f:c:t:" opt
+do
+	case $opt in
+		f)
+			Hifi_input=$OPTARG;;
+		c)
+			HiC_input=$OPTARG;;
+		t)
+			CPU=$OPTARG;;
+		?)
+			echo "Usage: assembly_anchor.sh -f hifi_input -c hic_input -t cpu"
+			exit 1;;
+	esac
+done
 
-Hifi_input=$1
-HiC_input=$2
-CPU=$3
+#Hifi_input=$1
+#HiC_input=$2
+#CPU=$3
 
 workdir="$(pwd)"
 Prefix="DWR_Pika07"
