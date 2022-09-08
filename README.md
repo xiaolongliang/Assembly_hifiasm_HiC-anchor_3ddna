@@ -4,6 +4,6 @@
 - Hic_input including Hi-c reads files
 ## How to run?  
 ```shell
-sh assembly_anchor_1.sh Hifi_input HiC_input 5
+sh assembly_anchor_1.sh -f Hifi_input -c HiC_input -t 32
 ```
-**5 is the CPU number**
+**32 is the CPU number**
